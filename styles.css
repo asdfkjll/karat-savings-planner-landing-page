@@ -1,0 +1,342 @@
+/* ==========================================================================
+   KARAT SAVINGS PLANNER HELPER APP - CSS COLOR PALETTE
+   ========================================================================== */
+
+/*
+   A NOTE ON THIS PALETTE:
+   Karat is designed to feel like a financial companion, not a stern institution.
+   This palette is built on optimism (Karat Gold), growth (Emerald Green),
+   and approachability (Calm Sky). It is vibrant, inviting, and encouraging.
+*/
+
+:root {
+    /* --- 1. KEY BRAND COLOR: KARAT GOLD ---
+     Optimism, value, accomplishment, reward.
+     Used for primary calls-to-action (CTAs) and key savings milestones.
+    */
+    --color-karat-gold: #FFC107;      /* Primary Gold: The warm heart of the app */
+    --color-karat-gold-light: #FFECB3; /* Light/Secondary Gold: Backgrounds, subtle highlights */
+    --color-karat-gold-dark: #FFA000;  /* Dark/Hover Gold: Button hovers, active states */
+
+    /* --- 2. THE GROWTH COLOR: EMERALD GREEN ---
+     Progress, financial health, savings goals, success.
+     Used for success messages, balance increases, and achievement markers.
+    */
+    --color-emerald-green: #2ECC71;      /* Primary Green: Core color for "growth" */
+    --color-emerald-green-light: #A9DFBF; /* Light Green: Chart fills, goal complete bubbles */
+    --color-emerald-green-dark: #1E8449;  /* Dark Green: Green-specific accents, focus states */
+
+    /* --- 3. THE COMPANION COLOR: CALM SKY (BLUE) ---
+     Trust, clarity, stability, a helpful guide.
+     Used as a secondary brand color, for informational boxes, and subtle borders.
+    */
+    --color-calm-sky: #4DD0E1;      /* Primary Sky: A soft, non-intimidating blue */
+    --color-calm-sky-light: #B2EBF2; /* Light Sky: Faint backgrounds, borders */
+    --color-calm-sky-dark: #00838F;  /* Dark Sky: Specific labels, text contrast against light sky */
+
+    /* --- 4. ACCENT COLORS ---
+     For contrast, variety, and specific feedback.
+    */
+    --color-coral: #FF6B6B;          /* Soft Error: Warnings, missing input, not "danger" red */
+    --color-lavender: #9B59B6;       /* Focus/Secondary: For alternative highlights, deep focus */
+
+    /* --- 5. NEUTRAL PALETTE (THE 'NORMAL PEOPLE' TONES) ---
+     Grounded, clear, and easy on the eyes. Use these for structure and text.
+    */
+    --color-text-dark: #333333;      /* Primary Text: Easy to read, but not harsh #000 */
+    --color-text-medium: #666666;    /* Secondary Text: Labels, subtitles, hints */
+    --color-text-light: #FFFFFF;     /* Light Text: Text on dark/saturated backgrounds */
+
+    --color-border-light: #E0E0E0;   /* Light Border: Cards, input borders, clean separation */
+    --color-background-off-white: #F8F9FA; /* App Background: Clean, but warmer than stark white */
+    --color-card-white: #FFFFFF;     /* Component Background: Cards, input fields */
+
+    /* Properties */
+    --corner-button: 20px;
+    --corner-card: 12px;
+
+    /* Define a base scale that adjusts with the screen */
+    --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --font-size-h1: clamp(2.25rem, 5vw, 3.5rem);
+    --font-size-h2: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-background-off-white);
+    color: var(--color-text-dark);
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif; /* Friendly san-serif */
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+button {
+    border: 0;
+}
+
+.header {
+    background-color: var(--color-background-off-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    width: 100vw;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.header__nav-menu {
+    background-color: var(--color-karat-gold-light);
+    transform: translateX(-100%);
+    transition: 0.3s ease;
+    height: 100vh;
+    width: 70vw;
+    position: absolute;
+    top: 0;
+    left:0;
+}
+
+.header__nav-icon {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.header__nav-icon span {
+    background: #333;
+    height: 4px;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+#menu-toggle:checked ~ .header__nav-menu {
+    transform: translateX(0);
+}
+
+.header__logo {
+    width: 50px;
+}
+
+.header__nav li {
+    list-style: none;
+    height: 50px;
+}
+
+.header__nav-menu img {
+    margin: 15px;
+}
+
+.header__nav li:hover {
+    background-color: var(--color-karat-gold-dark);
+}
+
+.header__nav a {
+    padding: 15px;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 5.Animate the Hamburger into an 'X' */
+#menu-toggle:checked + .header__nav-icon span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+#menu-toggle:checked + .header__nav-icon span:nth-child(2) {
+    opacity: 0;
+}
+#menu-toggle:checked + .header__nav-icon span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+
+.hero {
+    padding: 50px;
+    height: 60vh;
+    text-align: center;
+    align-content: center;
+}
+
+.hero__headline {
+    font-size: 6.66rem;
+    margin: 0;
+}
+
+.hero__subheadline {
+    margin: 4px 0 50px 0;
+    font-weight: 200;
+}
+
+.hero__button {
+    background: none;
+    border: 1px solid var(--color-text-dark);
+    padding: 18px 15px;
+    border-radius: var(--corner-button);
+    transition: .2s;
+    margin: 5px;
+}
+
+.hero__button i {
+    margin-right: 5px;
+}
+
+.start {
+    background-color: var(--color-karat-gold);
+    border: none;
+}
+
+.hero__button:hover {
+    cursor: pointer;
+}
+
+section {
+    padding: 100px 35px;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2.35rem;
+}
+
+.problem {
+    background-color: var(--color-karat-gold-light);
+}
+
+.features__container {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.features__item {
+    border-right: 2px solid var(--color-emerald-green);
+    padding-right: 5px;
+}
+
+.features__item-title {
+    color: var(--color-emerald-green-dark);
+    margin: 5px 0;
+}
+
+.features__item-icon {
+    background-color: var(--color-background-off-white);
+    border: 2px solid var(--color-emerald-green);
+    color: var(--color-emerald-green);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    align-content: center;
+    position: relative;
+    top: 0;
+    right: 13px;
+    z-index: -1000;
+    margin: 5px 0;
+}
+
+.steps {
+    background-color: var(--color-emerald-green);
+    color: var(--color-text-light);
+}
+
+.steps__container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.steps__item {
+    color: var(--color-text-dark);
+    padding: 53px 15px;
+    border-radius: var(--corner-card);
+    box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.05);
+    background-color: var(--color-card-white);
+}
+
+.steps__item h3 {
+    margin-bottom: 18px;
+}
+
+.stories__container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.stories__item {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 53px 15px;
+    border-radius: var(--corner-card);
+    box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.05);
+    background-color: var(--color-card-white);
+
+}
+
+.stories__text {
+    color: grey;
+}
+
+.stories__name {
+    font-weight: 800;
+}
+
+.stories__profile-picture {
+    width: 196px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Desktops */
+@media (max-width: 1440px) {}
+/* Tablet */
+@media (max-width: 1024px) {}
+/* Phones */
+@media (max-width: 600px) {}
