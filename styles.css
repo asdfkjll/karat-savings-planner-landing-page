@@ -277,6 +277,7 @@ section h2 {
 }
 
 .steps__item h3 {
+    border-bottom: 2px solid bisque;
     margin-bottom: 18px;
 }
 
